@@ -46,7 +46,7 @@ sslhlink="raw.githubusercontent.com/Gl33ch3r/cfsshws/main/sslh-fix"
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 ALLOWEDIP=$(curl https://raw.githubusercontent.com/Gl33ch3r/cfsshws/main/ipvps.txt | grep $MYIP)
-if [[ $MYIP == $ALLOWEDIP ]]; then
+if [[ $MYIP !== $ALLOWEDIP ]]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
 echo -e "${NC}${RED}Permission Denied!${NC}";
